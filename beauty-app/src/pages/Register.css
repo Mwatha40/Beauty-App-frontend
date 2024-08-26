@@ -1,0 +1,71 @@
+/* src/pages/Register.css */
+
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .register-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .register-form label span {
+    color: red;
+  }
+  
+  .register-form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .password-container {
+    position: relative;
+  }
+  
+  .password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .privacy-policy {
+    font-size: 12px;
+    color: #5a5a5a;
+    margin-bottom: 20px;
+  }
+  
+  .register-button {
+    padding: 10px;
+    background-color: #800080;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .register-button:hover {
+    background-color: #660066;
+  }

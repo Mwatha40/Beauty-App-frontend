@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AccountDropdown from '../pages/AccountDropdown';
 import './Navbar.css'; 
 
 const Navbar = () => {
@@ -19,6 +20,7 @@ const Navbar = () => {
         <li><Link to="/newsletter">Newsletter</Link></li>
         <li><Link to="/accessories">Accessories</Link></li>
         <li><Link to="/clearance-sale">Clearance Sale</Link></li>
+    <AccountDropdown />
       </ul>
     </nav>
   );
