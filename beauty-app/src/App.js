@@ -15,6 +15,8 @@ import Brands from './pages/Brands';
 import Newsletter from './pages/Newsletter';
 import Accessories from './pages/Accessories';
 import ClearanceSale from './pages/ClearanceSale';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/clearance-sale" element={<ClearanceSale />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Footer /> {/* The footer to  appear at the bottom*/}
       </div>
