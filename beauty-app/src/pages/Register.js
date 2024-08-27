@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { registerUser } from '../Api';
 import './Register.css'; 
 
 const Register = () => {
