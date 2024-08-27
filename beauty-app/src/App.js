@@ -18,6 +18,7 @@ import Newsletter from './pages/Newsletter';
 import Accessories from './pages/Accessories';
 import ClearanceSale from './pages/ClearanceSale';
 import Login from './pages/Login';
+
 import Logout from './pages/Logout';
 import Register from './pages/Register';
 
@@ -25,6 +26,8 @@ import Register from './pages/Register';
 import CartPage from './pages/Cart';
 import CheckoutPage from './pages/Checkout';
 import ProductPage from './pages/Product'; // This could be your Home page or a new one
+import Register from './pages/Register';
+
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -69,6 +72,7 @@ function App() {
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/clearance-sale" element={<ClearanceSale />} />
           <Route path="/login" element={<Login />} />
+
           <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
           <Route path="/accountdropdown" element={<AccountDropdown />} />
@@ -77,6 +81,7 @@ function App() {
           <Route path="/products" element={<ProductPage products={products} addToCart={addToCart} />} />
           <Route path="/cart" element={<CartPage cartItems={cartItems} removeFromCart={removeFromCart} />} />
           <Route path="/checkout" element={<CheckoutPage cartItems={cartItems} />} />
+
         </Routes>
         <Footer />
       </div>

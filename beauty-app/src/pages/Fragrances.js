@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './Makeup.css'; 
 
 const Fragrances= () => {
+import './Fragrances.css'; 
+
+const Hair = () => {
   const [activeTab, setActiveTab] = useState('On Sale');
 
   const renderContent = () => {
@@ -25,6 +28,7 @@ const Fragrances= () => {
 
   return (
     <div className="fragrances">
+    <div className=",hair">
       <div className="sidebar">
         <ul>
           <li className={activeTab === 'On Sale' ? 'active' : ''} onClick={() => setActiveTab('On Sale')}>On Sale</li>
@@ -42,4 +46,5 @@ const Fragrances= () => {
   );
 };
 
-export default Fragrances;
+export default Hair;
+

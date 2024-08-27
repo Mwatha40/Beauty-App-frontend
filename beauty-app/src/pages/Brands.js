@@ -25,6 +25,7 @@ const Brands= () => {
 
   return (
     <div className="brands">
+
       <div className="sidebar">
         <ul>
           <li className={activeTab === 'On Sale' ? 'active' : ''} onClick={() => setActiveTab('On Sale')}>On Sale</li>
@@ -43,3 +44,4 @@ const Brands= () => {
 };
 
 export default Brands;
+

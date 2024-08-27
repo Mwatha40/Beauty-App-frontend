@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Makeup.css'; 
+import './Skincare.css'; 
 
 const Skincare = () => {
   const [activeTab, setActiveTab] = useState('On Sale');

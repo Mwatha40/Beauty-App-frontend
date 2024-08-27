@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Makeup.css'; 
 
-const NewBestsellers = () => {
+const Makeup = () => {
   const [activeTab, setActiveTab] = useState('On Sale');
 
   const renderContent = () => {
@@ -24,7 +24,7 @@ const NewBestsellers = () => {
   };
 
   return (
-    <div className="new-bestsellers">
+    <div className=",makeup">
       <div className="sidebar">
         <ul>
           <li className={activeTab === 'On Sale' ? 'active' : ''} onClick={() => setActiveTab('On Sale')}>On Sale</li>
@@ -42,4 +42,4 @@ const NewBestsellers = () => {
   );
 };
 
-export default NewBestsellers;
+export default Makeup;
