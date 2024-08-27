@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import './Makeup.css'; 
+
+const Fragrances= () => {
 import './Fragrances.css'; 
 
 const Hair = () => {
@@ -24,6 +27,7 @@ const Hair = () => {
   };
 
   return (
+    <div className="fragrances">
     <div className=",hair">
       <div className="sidebar">
         <ul>

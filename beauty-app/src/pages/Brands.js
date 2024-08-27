@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Brands.css'; 
+import './Makeup.css'; 
 
-const Brands = () => {
+const Brands= () => {
   const [activeTab, setActiveTab] = useState('On Sale');
 
   const renderContent = () => {
@@ -24,7 +24,8 @@ const Brands = () => {
   };
 
   return (
-    <div className=",brands">
+    <div className="brands">
+
       <div className="sidebar">
         <ul>
           <li className={activeTab === 'On Sale' ? 'active' : ''} onClick={() => setActiveTab('On Sale')}>On Sale</li>

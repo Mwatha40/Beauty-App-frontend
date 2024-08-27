@@ -1,4 +1,30 @@
 import React, { useState } from 'react';
+import './Makeup.css'; 
+
+const Hair= () => {
+  const [activeTab, setActiveTab] = useState('On Sale');
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'On Sale':
+        return <div>Showing products on sale...</div>;
+      case 'By Brand':
+        return <div>Showing products by brand...</div>;
+      case 'By Category':
+        return <div>Showing products by category...</div>;
+      case 'By Type':
+        return <div>Showing products by type...</div>;
+      case 'By Collection':
+        return <div>Showing products by collection...</div>;
+      case 'By Concern':
+        return <div>Showing products by concern...</div>;
+      default:
+        return <div>Select an option to see the products.</div>;
+    }
+  };
+
+  return (
+    <div className="hair">
 import './Hair.css'; 
 
 const Hair = () => {
@@ -25,6 +51,7 @@ const Hair = () => {
 
   return (
     <div className=",hair">
+
       <div className="sidebar">
         <ul>
           <li className={activeTab === 'On Sale' ? 'active' : ''} onClick={() => setActiveTab('On Sale')}>On Sale</li>

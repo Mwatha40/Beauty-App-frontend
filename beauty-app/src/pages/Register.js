@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { registerUser } from '../Api';
 import './Register.css'; 
 
 const Register = () => {
@@ -8,7 +9,7 @@ const Register = () => {
   const [error, setError] = useState('');
 
   const validatePassword = (password) => {
-    const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,12}$/;
+    const passwordRegex = /^(?=.[0-9])(?=.[!@#$%^&])[A-Za-z\d!@#$%^&]{8,12}$/;
     return passwordRegex.test(password);
   };
 

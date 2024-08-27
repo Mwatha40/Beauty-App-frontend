@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Makeup.css'; 
 import './Skincare.css'; 
 
 const Skincare = () => {
@@ -24,7 +25,7 @@ const Skincare = () => {
   };
 
   return (
-    <div className=",skincare">
+    <div className="skincare">
       <div className="sidebar">
         <ul>
           <li className={activeTab === 'On Sale' ? 'active' : ''} onClick={() => setActiveTab('On Sale')}>On Sale</li>
