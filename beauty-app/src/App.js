@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer'; 
+import Header from './components/Header';
+import CartItem  from './components/CartItem';
+import Footer from './components/Footer';
 
 // Import page components
 import Home from './pages/Home';
@@ -26,7 +28,6 @@ import Register from './pages/Register';
 import CartPage from './pages/Cart';
 import CheckoutPage from './pages/Checkout';
 import ProductPage from './pages/Product'; // This could be your Home page or a new one
-import Register from './pages/Register';
 
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
     <Router>
       <div>
         <Navbar />
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new-bestsellers" element={<NewBestsellers />} />

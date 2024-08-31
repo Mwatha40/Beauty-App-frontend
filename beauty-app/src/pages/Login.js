@@ -1,6 +1,5 @@
-// src/pages/Login.js
-
-import React, { useState } from 'react';
+// src/components/Login.js
+import React, { useState } from 'react'; 
 import { loginUser } from '../Api';
 import './Login.css'; 
 
@@ -8,11 +7,19 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Handling of the  login logic 
-    console.log('Login:', { email, password });
+    try {
+      const credentials = { email, password };
+      const response = await loginUser(credentials);
+      console.log('Login successful:', response);
+      window.location.href = '/dashboard'; // Redirect to dashboard after successful login
+    } catch (error) {
+      console.error('Login failed:', error);
+      setErrorMessage('Login failed. Please check your credentials and try again.');
+    }
   };
 
   return (
@@ -48,6 +55,8 @@ const Login = () => {
           </label>
           <a href="/forgot-password">Lost your password?</a>
         </div>
+
+        {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Display error message */}
 
         <button type="submit" className="login-button">LOG IN</button>
       </form>

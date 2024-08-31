@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5555'; // Ensure this matches your backend URL
+const API_URL = 'http://127.0.0.1:5555';   // Ensure this matches your backend URL
 
 // Product API
 export const getProducts = async () => {
@@ -106,41 +106,79 @@ export const deleteUser = async (id) => {
 };
 
 // Auth API
+// Login function
 export const loginUser = async (credentials) => {
-  const response = await fetch(`${API_URL}/login`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(credentials),
-  });
-  if (!response.ok) throw new Error('Login failed');
-  return response.json();
-};
+  try {
+    const response = await fetch(`${API_URL}/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(credentials),
+    });
 
-export const registerUser = async (credentials) => {
-  const response = await fetch(`${API_URL}/register`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(credentials),
-  });
-  if (!response.ok) throw new Error('Registration failed');
-  return response.json();
-};
-
-
-export const logoutUser = async () => {
-    try {
-      const response = await fetch(`${API_URL}/logout`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
-      });
-      if (!response.ok) throw new Error('Logout failed');
-      localStorage.removeItem('token');
-      return response.json();
-    } catch (error) {
-      console.error('Error logging out:', error);
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Login failed');
     }
-  };
+
+    const data = await response.json();
+    localStorage.setItem('token', data.token); // Store the JWT token
+    return data;
+  } catch (error) {
+    console.error('Error logging in:', error);
+    throw error; // Re-throw to handle it where this function is called
+  }
+};
+
+// Register function
+export const registerUser = async (credentials) => {
+  try {
+    const response = await fetch(`${API_URL}/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(credentials),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Registration failed');
+    }
+
+    const data = await response.json();
+    // Return both status and data
+    return {
+      data: data,
+      status: response.status
+    };
+  } catch (error) {
+    console.error('Error registering:', error);
+    throw error; // Re-throw to handle it where this function is called
+  }
+};
+
+// Logout function
+export const logoutUser = async () => {
+  try {
+    const token = localStorage.getItem('token');
+    const response = await fetch(`${API_URL}/logout`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`, // Correctly format the Authorization header
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Logout failed');
+    }
+
+    localStorage.removeItem('token'); // Remove the JWT token on logout
+    return await response.json();
+  } catch (error) {
+    console.error('Error logging out:', error);
+    throw error; // Re-throw to handle it where this function is called
+  }
+};
+
   
 
