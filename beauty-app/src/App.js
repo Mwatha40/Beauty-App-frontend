@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Header from './components/Header';
-import CartItem  from './components/CartItem';
+
+
 import Footer from './components/Footer';
 
 // Import page components
@@ -60,7 +60,7 @@ function App() {
     <Router>
       <div>
         <Navbar />
-        <Header />
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new-bestsellers" element={<NewBestsellers />} />
