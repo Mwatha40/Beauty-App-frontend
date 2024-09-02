@@ -1,143 +1,48 @@
-/* src/styles/BeautyShop.css */
-
-/* Base styles */
+/* General Body Styling */
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #0add14, #c50847); /* Light background gradient */
-  color: #df85d0;
+  font-family: Arial, sans-serif;
+  background-color: #ffe6e6; /* Light pink background */
   margin: 0;
   padding: 0;
 }
 
-/* Header and Navbar */
-.header {
-  background: #b18686; /* Vibrant red */
-  color: rgb(125, 146, 118);
-  padding: 1rem;
+/* Main Container Styling */
+.container {
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  background: #bc9ec2; /* Vibrant purple */
-  padding: 0.5rem 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.navbar a {
+/* Header Styling */
+header {
+  background-color: #ff4d4d; /* Red background */
   color: white;
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  margin: 0 0.5rem;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  transition: background 0.3s ease, color 0.3s ease;
+  padding: 10px 0;
+  font-size: 2em;
 }
 
-.navbar a:hover {
-  background: #d32f2f; /* Red on hover */
-  color: #ffffff;
-}
-
-/* Hero section */
-.hero {
-  background: #7b1fa2; /* Purple */
-  color: #e1f5fe; /* Light cyan */
-  padding: 2rem;
-  text-align: center;
-  border-bottom: 3px solid #d32f2f; /* Red border */
-  box-shadow: 0 4px 8px rgba(236, 77, 4, 0.2);
-}
-
-.hero h2 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* Product cards */
-.product-card {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(209, 212, 3, 0.2);
-  overflow: hidden;
-  margin: 1rem;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(210, 2, 218, 0.3);
-}
-
-.product-card img {
-  width: 100%;
-  height: auto;
-}
-
-.product-card .content {
-  padding: 1rem;
-  background: #05f519; /* Light green */
-}
-
-.product-card h3 {
-  margin: 0.5rem 0;
-  color: #d32f2f; /* Red */
-}
-
-.product-card p {
-  color: #16e0e7;
-}
-
-.product-card .price {
-  font-size: 1.2rem;
-  color: #f0e00b; /* Purple */
-}
-
-/* Button styles */
-.button {
-  background: #e20724; /* Purple */
+/* Button Styling */
+button {
+  background-color: #ff0066; /* Pink button */
   color: white;
-  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: 10px 20px;
+  font-size: 1em;
   cursor: pointer;
-  text-align: center;
-  display: inline-block;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: #e6005c; /* Darker pink */
+}
+
+/* Link Styling */
+a {
+  color: #ff0066; /* Pink links */
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.button:hover {
-  background: #e4e706; /* Red */
-  transform: scale(1.05);
-}
-
-/* Footer */
-.footer {
-  background: #7b1fa2; /* Purple */
-  color: rgb(14, 231, 25);
-  padding: 1rem;
-  text-align: center;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.footer p {
-  margin: 0;
-  font-size: 1rem;
+a:hover {
+  text-decoration: underline;
 }

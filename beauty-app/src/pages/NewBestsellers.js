@@ -42,4 +42,6 @@ const NewBestsellers = () => {
   );
 };
 
+
 export default NewBestsellers;
+
