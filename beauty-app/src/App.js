@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 
 
 import Footer from './components/Footer';
+import CartItem from './components/CartItem';
 
 // Import page components
 import Home from './pages/Home';
@@ -77,6 +78,7 @@ function App() {
 
           <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
+          <Route path='/cart' element={<CartItem />}/>
           <Route path="/accountdropdown" element={<AccountDropdown />} />
 
           {/* Cart-related routes */}
