@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
 
-
-import Footer from './components/Footer';
 import CartItem from './components/CartItem';
+import CartPage from './components/CartPage';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import ProductCard from './components/ProductCard';
+import Header from './components/Header';
 
 // Import page components
 import Home from './pages/Home';
 import NewBestsellers from './pages/NewBestsellers';
 import AccountDropdown from './pages/AccountDropdown';
-
+import CheckoutPage from './pages/Checkout';
 import Makeup from './pages/Makeup';
 import Skincare from './pages/Skincare';
 import Haircare from './pages/Haircare';
@@ -21,13 +23,8 @@ import Newsletter from './pages/Newsletter';
 import Accessories from './pages/Accessories';
 import ClearanceSale from './pages/ClearanceSale';
 import Login from './pages/Login';
-
 import Logout from './pages/Logout';
 import Register from './pages/Register';
-
-// Import cart-related components
-import CartPage from './pages/Cart';
-import CheckoutPage from './pages/Checkout';
 import ProductPage from './pages/Product'; // This could be your Home page or a new one
 
 
@@ -75,7 +72,6 @@ function App() {
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/clearance-sale" element={<ClearanceSale />} />
           <Route path="/login" element={<Login />} />
-
           <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
           <Route path='/cart' element={<CartItem />}/>

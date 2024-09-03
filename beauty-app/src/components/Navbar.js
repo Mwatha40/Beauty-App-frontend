@@ -19,6 +19,7 @@ const Navbar = () => {
         <li><Link to="/brands">Brands</Link></li>
         <li><Link to="/accessories">Accessories</Link></li>
         <li><Link to="/clearance-sale">Clearance Sale</Link></li>
+        <li><Link to="/cart">Cart</Link></li>
     <AccountDropdown />
       </ul>
     </nav>
