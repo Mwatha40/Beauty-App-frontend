@@ -1,17 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CartItem = ({ item, removeFromCart }) => {
+  if (!item) {
+    return null; // Or some fallback UI
+  }
+
   return (
-    <div className="cart-item">
-      <h4>{item.name}</h4>
-      <p>Price: ${item.price}</p>
-      <p>Quantity: {item.quantity}</p>
+    <li>
+      <span>{item.name} x {item.quantity}</span>
+      <span>${item.price * item.quantity}</span>
       <button onClick={() => removeFromCart(item.id)}>Remove</button>
-      <h1>This route is working</h1>
-    </div>
+    </li>
   );
 };
 
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    name: PropTypes.string,
+    quantity: PropTypes.number,
+    price: PropTypes.number,
+    id: PropTypes.string,
+  }),
+  removeFromCart: PropTypes.func.isRequired,
+};
+
 export default CartItem;
-
-

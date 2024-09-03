@@ -1,5 +1,5 @@
 import React from 'react';
-import CartItem from '../components/CartItem';
+import CartItem from './CartItem'; // Import CartItem component
 
 const CartPage = ({ cartItems, removeFromCart }) => {
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -11,9 +11,11 @@ const CartPage = ({ cartItems, removeFromCart }) => {
         <p>Your cart is empty</p>
       ) : (
         <div>
-          {cartItems.map(item => (
-            <CartItem key={item.id} item={item} removeFromCart={removeFromCart} />
-          ))}
+          <ul>
+            {cartItems.map(item => (
+              <CartItem key={item.id} item={item} removeFromCart={removeFromCart} />
+            ))}
+          </ul>
           <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
         </div>
       )}
