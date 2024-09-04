@@ -13,7 +13,7 @@ const Register = () => {
 
 
   const validatePassword = (password) => {
-  const passwordRegex = /^(?=.[0-9])(?=.[!@#$%^&])[A-Za-z\d!@#$%^&]{8,12}$/;
+    const passwordRegex = /^(?=.[0-9])(?=.[!@#$%^&])[A-Za-z\d!@#$%^&]{8,12}$/;
     return passwordRegex.test(password);
   };
 
@@ -41,7 +41,7 @@ const Register = () => {
   return (
     <div className="register-container">
       <form className="register-form" onSubmit={handleRegister}>
-        <label htmlFor="email">username <span>*</span></label>
+        <label htmlFor="username">Username <span>*</span></label>
         <input 
           type="text" 
           id="username" 
@@ -79,7 +79,7 @@ const Register = () => {
           Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.
         </p>
 
-        <button type="submit" className="register-button" >REGISTER</button>
+        <button type="submit" className="register-button">REGISTER</button>
       </form>
     </div>
   );
