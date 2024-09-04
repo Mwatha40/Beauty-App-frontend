@@ -1,24 +1,22 @@
 import React from 'react';
-import CartItem from './CartItem'; // Import CartItem component
+import CartItem from './CartItem';
 
 const CartPage = ({ cartItems, removeFromCart }) => {
-  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
   return (
     <div>
-      <h2>Your Cart</h2>
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty</p>
-      ) : (
-        <div>
-          <ul>
-            {cartItems.map(item => (
-              <CartItem key={item.id} item={item} removeFromCart={removeFromCart} />
-            ))}
-          </ul>
-          <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
-        </div>
-      )}
+      <h1>Cart</h1>
+      <ul>
+        {cartItems.map(item => (
+          <CartItem
+            key={item.id}
+            itemId={item.id}
+            removeFromCart={removeFromCart}
+          />
+        ))}
+      </ul>
+      <p>
+        Total: ${cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)}
+      </p>
     </div>
   );
 };

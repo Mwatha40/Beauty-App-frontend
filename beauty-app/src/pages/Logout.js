@@ -1,6 +1,4 @@
-
-
-
+// src/components/LogoutButton.js
 import React from 'react';
 import { logoutUser } from '../Api'; 
 
