@@ -1,0 +1,97 @@
+.accessories {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .sidebar {
+    width: 20%;
+    padding: 10px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .sidebar li.active,
+  .sidebar li:hover {
+    background-color: #eee;
+    color: #333;
+  }
+  
+  .content {
+    width: 80%;
+    padding: 20px;
+  }
+  
+  .accessories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .accessory-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .accessory-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .accessory-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .accessory-name {
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .btn.add-to-cart {
+    background-color: #ff6f61;
+    color: #fff;
+  }
+  
+  .btn.add-to-cart:hover {
+    background-color: #ff3b2d;
+  }
+  
+  .btn.view-details {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn.view-details:hover {
+    background-color: #0056b3;
+  }

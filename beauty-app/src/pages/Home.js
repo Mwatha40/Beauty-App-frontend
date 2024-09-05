@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <Header />
       <header>
-        <img src={`${process.env.PUBLIC_URL}/images/banner.jpg`} alt="Banner" />
+    
       </header>
       <div>
         <h1>New & Bestsellers</h1>

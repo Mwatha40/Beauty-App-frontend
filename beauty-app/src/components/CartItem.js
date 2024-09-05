@@ -1,57 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 
-const CartItem = ({ itemId, removeFromCart }) => {
-  const [item, setItem] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+const CartItem = ({ item, removeFromCart }) => {
+  console.log('CartItem props:', item); // Add this line to log the item props
 
-  useEffect(() => {
-    const fetchItem = async () => {
-      try {
-        const response = await axios.get(`http://localhost:5000/api/cart/${itemId}`);
-        setItem(response.data);
-        setLoading(false);
-      } catch (error) {
-        setError(error.message);
-        console.error('Error fetching cart item:', error);
-      }
-    };
-
-    fetchItem();
-  }, [itemId]);
-
-  const handleRemove = async () => {
-    try {
-      await axios.delete(`http://localhost:5000/api/cart/${item.id}`);
-      removeFromCart(item.id);
-      setLoading(true); // set loading to true to re-fetch the cart items
-    } catch (error) {
-      setError(error.message);
-      console.error('Error removing item from cart:', error);
-    }
-  };
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
+  if (!item || !item.product) {
+    return <p>Product information not available</p>;
   }
 
   return (
     <li>
-      <span>{item.name} x {item.quantity}</span>
-      <span>${(item.price * item.quantity).toFixed(2)}</span>
-      <button onClick={handleRemove}>Remove</button>
+      <h2>{item.product.name}</h2>
+      <p>Price: ${item.product.price}</p>
+      <p>Quantity: {item.quantity}</p>
+      <button onClick={() => removeFromCart(item.id)}>Remove from cart</button>
     </li>
   );
 };
 
 CartItem.propTypes = {
-  itemId: PropTypes.string.isRequired,
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    product: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+    }).isRequired,
+    quantity: PropTypes.number.isRequired,
+  }).isRequired,
   removeFromCart: PropTypes.func.isRequired,
 };
 
