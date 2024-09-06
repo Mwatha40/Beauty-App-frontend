@@ -5,12 +5,12 @@ import CartItem from './components/CartItem';
 import CartPage from './components/CartPage';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import ProductCard from './components/ProductCard';
-import Header from './components/Header';
+//import ProductCard from './components/ProductCard';
+//import Header from './components/Header';
 
 // Import page components
 import Home from './pages/Home';
-import NewBestsellers from './pages/NewBestsellers';
+//import NewBestsellers from './pages/NewBestsellers';
 import AccountDropdown from './pages/AccountDropdown';
 import CheckoutPage from './pages/Checkout';
 import Makeup from './pages/Makeup';
@@ -21,7 +21,7 @@ import Fragrances from './pages/Fragrances';
 import Brands from './pages/Brands';
 import Newsletter from './pages/Newsletter';
 import Accessories from './pages/Accessories';
-import ClearanceSale from './pages/ClearanceSale';
+//import ClearanceSale from './pages/ClearanceSale';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
 import Register from './pages/Register';
@@ -61,7 +61,6 @@ function App() {
         
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/new-bestsellers" element={<NewBestsellers />} />
           <Route path="/makeup" element={<Makeup />} />
           <Route path="/skincare" element={<Skincare />} />
           <Route path="/haircare" element={<Haircare />} />
@@ -70,7 +69,6 @@ function App() {
           <Route path="/brands" element={<Brands />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/accessories" element={<Accessories />} />
-          <Route path="/clearance-sale" element={<ClearanceSale />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
